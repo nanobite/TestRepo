@@ -1,9 +1,7 @@
 package Main.Groceries;
 
-import java.awt.Color;
-
 public abstract class Grocery {
-
+    private final double TAX = 0.13;
     private String name;
     private double mass;
     private String color;
@@ -50,6 +48,11 @@ public abstract class Grocery {
         this.color = color;
     }
 
+    public Grocery(String name, double mass, String color, double price) {
+        this(name, mass, color);
+        this.price = price;
+    }
+
     /**
      * Gets the name of the item
      *
@@ -85,6 +88,20 @@ public abstract class Grocery {
     public void setMass(double mass) {
         this.mass = mass;
     }
+    /**
+     * Gets the price of the item
+     * @return 
+     */
+    public double getPrice() {
+        return price+(price*TAX);
+    }
+    /**
+     * Sets the price of the item
+     * @param price 
+     */
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
     /**
      * Gets the color of the item
@@ -102,6 +119,10 @@ public abstract class Grocery {
      */
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public double getTAX() {
+        return TAX*price;
     }
 
     /**
