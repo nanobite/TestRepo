@@ -1,11 +1,13 @@
 package Main.Groceries;
 
 public abstract class Grocery {
+
     private final double TAX = 0.13;
     private String name;
     private double mass;
     private String color;
     private double price;
+    private static int amount;
 
     /**
      * A grocery item.
@@ -48,9 +50,31 @@ public abstract class Grocery {
         this.color = color;
     }
 
+    /**
+     * A grocery item.
+     *
+     * @param name The item's name.
+     * @param mass The item's mass.
+     * @param color The item's color.
+     * @param price The item's price
+     */
     public Grocery(String name, double mass, String color, double price) {
         this(name, mass, color);
         this.price = price;
+    }
+
+    /**
+     * A grocery item.
+     *
+     * @param name The item's name.
+     * @param mass The item's mass.
+     * @param color The item's color.
+     * @param price The item's price
+     * @param amount The amount of the item.
+     */
+    public Grocery(String name, double mass, String color, double price, int amount) {
+        this(name, mass, color, price);
+        this.amount = amount;
     }
 
     /**
@@ -88,16 +112,20 @@ public abstract class Grocery {
     public void setMass(double mass) {
         this.mass = mass;
     }
+
     /**
      * Gets the price of the item
-     * @return 
+     *
+     * @return
      */
     public double getPrice() {
-        return price+(price*TAX);
+        return price + (price * TAX);
     }
+
     /**
      * Sets the price of the item
-     * @param price 
+     *
+     * @param price
      */
     public void setPrice(double price) {
         this.price = price;
@@ -121,8 +149,16 @@ public abstract class Grocery {
         this.color = color;
     }
 
+    public static int getAmount() {
+        return amount;
+    }
+
+    public static void setAmount(int amount) {
+        Grocery.amount = amount;
+    }
+
     public double getTAX() {
-        return TAX*price;
+        return TAX * price;
     }
 
     /**
