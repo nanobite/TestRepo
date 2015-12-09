@@ -6,7 +6,8 @@ public abstract class Grocery {
 
     private String name;
     private double mass;
-    private Color color;
+    private String color;
+    private double price;
 
     /**
      * A grocery item.
@@ -14,6 +15,39 @@ public abstract class Grocery {
     public Grocery() {
         this.name = "empty";
         this.mass = 0;
+    }
+
+    /**
+     * A grocery item
+     *
+     * @param name Item's name.
+     */
+    public Grocery(String name) {
+        this();
+        this.name = name;
+    }
+
+    /**
+     * A grocery item.
+     *
+     * @param name The item's name.
+     * @param mass The item's mass.
+     */
+    public Grocery(String name, double mass) {
+        this(name);
+        this.mass = mass;
+    }
+
+    /**
+     * A grocery item.
+     *
+     * @param name The item's name.
+     * @param mass The item's mass.
+     * @param color The item's color.
+     */
+    public Grocery(String name, double mass, String color) {
+        this(name, mass);
+        this.color = color;
     }
 
     /**
@@ -57,7 +91,7 @@ public abstract class Grocery {
      *
      * @return
      */
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
@@ -66,7 +100,7 @@ public abstract class Grocery {
      *
      * @param color
      */
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -76,9 +110,18 @@ public abstract class Grocery {
     public abstract void eat();
 
     /**
+     * Buy an item
+     *
+     * @param money The amount of money the user will pay for the item.
+     * @return Weather the item was bought or not
+     */
+    public abstract boolean buy(double money);
+
+    /**
      * Returns a string representation of the item
      *
      * @return
      */
     public abstract String toString();
+
 }
