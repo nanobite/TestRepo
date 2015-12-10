@@ -8,6 +8,7 @@ public abstract class Grocery {
     private String color;
     private double price;
     private static int amount;
+    //asdf
 //mice
 //nick's branch
     /**
