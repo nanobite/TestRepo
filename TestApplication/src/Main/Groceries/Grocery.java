@@ -9,6 +9,7 @@ public abstract class Grocery {
     private double price;
     private static int amount;
 //mice
+//nick's branch
     /**
      * A grocery item.
      */
