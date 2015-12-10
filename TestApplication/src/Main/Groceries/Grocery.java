@@ -2,7 +2,7 @@ package Main.Groceries;
 
 public abstract class Grocery {
 //lazar
-//nick
+
     private final double TAX = 0.13;
     private String name;
     private double mass;
